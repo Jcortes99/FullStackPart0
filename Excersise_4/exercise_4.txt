@@ -8,9 +8,10 @@ browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
 server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ...]
 
 browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_notehttps://studies.cs.helsinki.fi/exampleapp/new_note
-payload->note:"Hello world"
+    payload->note:"Hello world"
+server-->browser: HTTP 302 and redirection into Location: /exampleapp/notes
 
-the server write the new note and "reload" the page.
+the server write the new note and "reload" the page .
 
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
 server-->browser: HTML-code
