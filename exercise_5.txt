@@ -6,8 +6,5 @@ browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
 server-->browser: main.js
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
 server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ...]
-browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
-    payload->{content: "Single page note", date: "2023-07-08T13:09:19.138Z"}
 
-The js code redraw the notes in the same page without any HTTP GET. Finnally, when I save the message
-I only see my post, when I reaload the page I may find some new information among my messages.
+the browser loads the information into data.json
